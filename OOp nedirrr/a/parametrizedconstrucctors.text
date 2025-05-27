@@ -1,0 +1,8 @@
+📚 Parameterized Constructors (Parametreli Yapıcı Metotlar)
+Önceki örnekte kullandığımız constructor her zaman aynı boyutlarda kutular yaratıyordu. Ama her kutunun boyutları farklı olabilir, değil mi? İşte bu durumda parametreli constructor kullanıyoruz.
+
+
+❓ Parametreli Constructor Ne Yapar?
+Parametreli constructor, nesne oluşturulurken o nesnenin özelliklerini dışarıdan verilen parametrelerle başlatmamıza olanak tanır.
+Yani her nesneye farklı değerler atayabiliriz.
+

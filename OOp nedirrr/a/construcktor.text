@@ -1,0 +1,57 @@
+☑️ Constructor (Yapıcı Metot) Nedir?
+Java'da bir nesne oluşturduğunda (new ile), nesne otomatik olarak bir “yapıcı metod” yani constructor tarafından başlatılır.
+
+🧠 Constructor’ın Özellikleri
+Sınıfla aynı isme sahiptir (yani sınıfın adı Box ise, constructor da Box olur).
+Geri dönüş tipi yoktur (hatta void bile yazılmaz).
+Nesne oluşturulurken otomatik çağrılır.
+new Box(); ifadesi aslında Box() constructor'ını çağırır.
+
+📌 Neden Kullanılır?
+Daha önce setDim() gibi metodlarla kutunun boyutlarını ayarlıyorduk. Ama her seferinde ayrı ayrı yazmak zorunda kalıyorduk.
+Constructor kullanarak nesne oluştururken bu işlemi otomatik yaparız. Çok daha pratik ve temiz olur!
+
+
+✅ Senin Kodunun Constructor'lı Versiyonu:
+// Constructor kullanan Box sınıfı
+class Box {
+    double width;
+    double height;
+    double depth;
+
+    // Constructor (yapıcı metot)
+    Box() {
+        System.out.println("Constructing Box");
+        width = 10;
+        height = 10;
+        depth = 10;
+    }
+
+    // Hacim hesaplama metodu
+    double volume() {
+        return width * height * depth;
+    }
+}
+
+class BoxDemo6 {
+    public static void main(String args[]) {
+        // Constructor otomatik çağrılır!
+        Box mybox1 = new Box();
+        Box mybox2 = new Box();
+
+        System.out.println("Volume is " + mybox1.volume());
+        System.out.println("Volume is " + mybox2.volume());
+    }
+}
+
+
+🧪 Program çalıştığında konsolda göreceğin çıktı:
+Constructing Box
+Constructing Box
+Volume is 1000.0
+Volume is 1000.0
+
+❓ Sıkça Karıştırılan: new Box(); kısmı neden parantezli?
+Çünkü bu kısım aslında constructor çağrısıdır.
+new Box(); ➜ Box() constructor'ını çağırır. Parantez bu yüzden zorunludur.
+

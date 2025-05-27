@@ -1,0 +1,21 @@
+OOP Temel konsept
+
+class
+object
+method
+abstraction
+encapsulation
+inheritence
+polymorphism
+
+
+Bir class ondan üretilecek objenin taslağıdır
+class ile objects aynı şey değildir
+	class Sınıfadı {
+		//fields, instance variable
+		//methods }
+
+obje == instance
+
+
+stateler fieldları davranışlar methodları temsil eder

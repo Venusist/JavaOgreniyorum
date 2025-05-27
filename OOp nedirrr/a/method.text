@@ -1,0 +1,28 @@
+📌 Giriş: Java'da Method Nedir?
+
+Java’da bir sınıf (class) genelde iki şey içerir:
+Instance variables → yani nesneye ait değişkenler (örneğin: width, height)
+Methods → o sınıfın yapabileceği işler, davranışlar (örneğin: calculateVolume())
+
+📌 Genel Method Yapısı
+type methodName(parameterList) {
+    // methodun içindeki işlemler
+    return value; // eğer void değilse
+}
+
+type → Metodun döndürdüğü (return ettiği) veri tipi. Örn: int, double, String, void
+methodName → Metodun ismi (kendi verdiğimiz isim)
+parameterList → Metoda dışarıdan gönderilecek verilerin tanımı. Hiç olmayabilir.
+return value; → Metodun dışarıya değer döndürmesini sağlar. !!!!! void ise bu satır olmaz veya return; şeklinde yazılır.
+
+
+1- return kullanan metot: değer döner
+int kareAl(int x) {
+    return x * x;
+}
+
+2-void kullanan metot : sadece işlm yapar değer dönmez
+void selamla() {
+    System.out.println("Merhaba!);
+}
+

@@ -1,0 +1,50 @@
+📌 Java'da Sınıflar ve Nesneler Hakkında Temel Bilgiler
+🔹 1. Java'daki Sınıflar (Classes)
+Önceki bölümlerde oluşturulan sınıflar çoğunlukla sadece main() metodunu kapsamak için yazılmıştır. Amaç, Java sözdiziminin (syntax) temellerini göstermekti.
+
+Ancak aslında sınıflar yeni bir veri türü (data type) tanımlar.
+
+Bu yeni tür tanımlandıktan sonra, bu türden nesneler (objects) oluşturulabilir.
+
+Yani, bir sınıf bir nesne için şablondur (template) ve bir nesne, bir sınıfın örneğidir (instance).
+
+Bu yüzden Java'da "object" ve "instance" terimleri genellikle birbirinin yerine kullanılır.
+
+🔹 2. Üyeler (Members): Değişkenler ve Metotlar
+Bir sınıf içinde tanımlanan verilere (değişkenlere) "örnek değişken (instance variable)" denir.
+
+Sınıf içindeki kodlar ise metotlar içerisinde yer alır.
+
+Hem metotlar hem de değişkenler birlikte sınıfın üyeleri (members) olarak adlandırılır.
+
+🔹 3. Neden "Instance Variable" Denir?
+Çünkü bir sınıfın her bir nesnesi, bu değişkenlerin kendi kopyalarına sahiptir.
+
+Yani bir nesnenin verileri, başka bir nesneninkilerden bağımsız ve kendine özgüdür.
+
+🔹 4. main() Metodu Zorunlu Değildir
+Java sınıflarının main() metoduna sahip olması zorunlu değildir.
+
+Sadece o sınıf programın başlangıç noktası olacaksa main() metodu gerekir.
+
+Örneğin, bazı Java uygulamaları (örneğin appletler) hiç main() metoduna ihtiyaç duymaz.
+
+
+
+Box mybox = new Box(); // mybox adında bir Box nesnesi oluştur
+Bu satır çalıştıktan sonra mybox artık Box türünden gerçek bir nesne, yani bir instance olur.
+
+Artık mybox nesnesi, width, height ve depth isimli kendi değişken kopyalarına sahiptir.
+
+ Nokta (.) Operatörü
+Nesnenin içindeki değişkenlere veya metotlara erişmek için . (nokta) operatörü kullanılır.
+
+mybox.width = 10;
+Bu, mybox nesnesinin width değişkenine erişimi gösterir.
+
+Bu operatör yaygın olarak "dot operator" olarak adlandırılır.
+
+Aslında Java'nın resmi tanımında bu . sembolü bir "ayırıcı" (separator) olarak geçer.
+
+Ama "dot operator" terimi o kadar yaygındır ki, çoğu kaynakta bu şekilde kullanılır.
+

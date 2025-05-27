@@ -1,0 +1,96 @@
+finalize() Metodu
+
+Java, nesnelerin bellekten silinmeden önce bazı işlemleri gerçekleştirmesini sağlamak için finalize() metodunu sunar.
+ Örneğin, bir nesne bir dosya ya da karakter fontu gibi Java dışı kaynaklara sahipse, bu kaynakları serbest bırakmak isteyebilirsiniz.
+  Java, nesnenin çöp toplama (garbage collection) sırasında bu işlemleri yapabilmesi için finalization (finalizasyon) işlemini sağlar.
+
+  finalize() Metodunun Kullanımı:
+
+  protected void finalize() {
+  // Finalizasyon kodu buraya yazılır
+}
+
+
+finalize() metodu garbage collector (çöp toplayıcı) tarafından çağrılır, yani nesne bellekten silinmeye yaklaşırken çalışır.
+Ancak önemli bir nokta, finalize() metodunun çağrılmasının ne zaman gerçekleşeceğini bilemezsiniz. Çöp toplama her zaman belirli bir zamanda gerçekleşmez.
+finalize() yalnızca garbage collection (çöp toplama) öncesinde çalışır, dolayısıyla nesne scope dışında olduğunda çalışmaz.
+Bu metodu kullanmak, nesnenin kaynaklarını serbest bırakmak için güvenilir bir yöntem değildir. Bunun yerine nesnenin kaynaklarını başka yollarla serbest bırakmalısınız.
+Java'da destructor (yıkıcı) kavramı yoktur, ancak finalize() metodu buna benzer bir işlev görür.
+
+
+
+
+STACK YIĞIN SINIFI
+
+Java'da yığın (stack), "ilk giren, son çıkar" 
+(LIFO - Last In First Out) prensibiyle çalışan bir veri yapısıdır. 
+Yani, yığına eklenen ilk öğe, son çıkarılır. Yığınla çalışmak için genellikle iki temel işlem kullanılır: push ve pop.
+
+
+class Stack {
+    int stck[] = new int[10];  // Yığını tutacak dizi
+    int tos;                    // Yığının üstündeki öğe
+
+    // Yapıcı (constructor)
+    Stack() {
+        tos = -1;  // Başlangıçta yığın boş
+    }
+
+    // Yığına öğe ekleme
+    void push(int item) {
+        if (tos == 9)
+            System.out.println("Stack is full.");  // Yığın dolu
+        else
+            stck[++tos] = item;  // Öğeyi yığına ekle
+    }
+
+    // Yığından öğe çıkarma
+    int pop() {
+        if (tos < 0) {
+            System.out.println("Stack underflow.");  // Yığın boş
+            return 0;
+        } else {
+            return stck[tos--];  // Yığından öğe çıkar ve geri döndür
+        }
+    }
+}
+
+
+stck[]: Yığının veri yapısını tutar (burada bir dizi olarak tanımlanmıştır).
+tos: Yığının üst öğesini temsil eden bir indeks.
+push(): Bir öğe ekler.
+pop(): Bir öğe çıkarır.
+
+Test Programı (Yığın Kullanımı):
+class TestStack {
+    public static void main(String args[]) {
+        Stack mystack1 = new Stack();
+        Stack mystack2 = new Stack();
+
+        // İlk yığına bazı sayılar ekleyelim
+        for (int i = 0; i < 10; i++) mystack1.push(i);
+        for (int i = 10; i < 20; i++) mystack2.push(i);
+
+        // Yığından öğeler çıkaralım
+        System.out.println("Stack in mystack1:");
+        for (int i = 0; i < 10; i++)
+            System.out.println(mystack1.pop());
+
+        System.out.println("Stack in mystack2:");
+        for (int i = 0; i < 10; i++)
+            System.out.println(mystack2.pop());
+    }
+}
+
+
+mystack1 ve mystack2 adlı iki farklı yığın (stack) nesnesi oluşturduk.
+
+İlk yığına 0-9 arası sayılar ekledik, ikinci yığına ise 10-19 arası sayılar ekledik.
+
+Daha sonra her iki yığından öğeleri pop ettik ve ekrana yazdırdık.
+
+Yığınlar birbirinden bağımsız çalıştı, her biri kendi verisini tutuyor.
+
+Yığın Sınıfının İyileştirilmesi:
+Yığın sınıfının şu anki haliyle dışarıdan dizinin (stck) değiştirilmesi mümkün. Bu, yığının güvenliğini ve bütünlüğünü bozabilir. Bir sonraki derste, bunu nasıl daha güvenli hale getirebileceğimizi göreceğiz.
+

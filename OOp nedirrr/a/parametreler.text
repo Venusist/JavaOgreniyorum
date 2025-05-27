@@ -1,0 +1,79 @@
+📌 Parametre Alan Metotlar Nedir?
+Normalde bir metot sabit bir şey yapar.
+Mesela bu metot sadece 10’un karesini döndürür:
+
+int square() {
+    return 10 * 10;
+}
+
+Ama bu pek işe yaramaz çünkü sadece 10 için çalışıyor.
+
+✅ Parametre Ekleyerek Genel Amaçlı Hale Getirme
+Metota bir parametre eklersen, istediğin sayının karesini alabilirsin:
+
+int square(int i){
+    return i*i;
+}
+
+bu metot artık her çağırıldığında istediğin sayının karesini alır
+
+int x = square(5); // x=25
+int y = square(9); //y=81
+
+💡 Parametre ile Argüman Arasındaki Fark:
+Parametre (parameter): Metot tanımında yazdığımız değişken: int i
+Argüman (argument): Metot çağrılırken gönderilen değer: square(100) → 100 burada argüman
+
+
+
+📦 Box Sınıfına Uygulama (setDim Metodu)
+Daha önce her kutunun ölçülerini ayrı ayrı elle atıyorduk:
+şu şeklindemybox1.width = 10;
+mybox1.height = 20;
+mybox1.depth = 15;
+
+Bunun yerine setDim(double w, double h, double d) metodu ekleyip tek satırda tüm ölçüleri girebiliriz 👇
+class Box {
+    double width;
+    double height;
+    double depth;
+
+    // hacim hesapla
+    double volume() {
+        return width * height * depth;
+    }
+
+    // ölçüleri ayarlayan metot
+    void setDim(double w, double h, double d) {
+        width = w;
+        height = h;
+        depth = d;
+    }
+}
+
+public class BoxDemo5 {
+    public static void main(String[] args) {
+        Box mybox1 = new Box();
+        Box mybox2 = new Box();
+
+        mybox1.setDim(10, 20, 15);
+        mybox2.setDim(3, 6, 9);
+
+        System.out.println("mybox1 hacmi: " + mybox1.volume()); // 3000
+        System.out.println("mybox2 hacmi: " + mybox2.volume()); // 162
+    }
+}
+
+🧠 Önemli Notlar:
+✅ Parametreli metotlar daha temiz, güvenli ve hatasız kod yazmamıza yardımcı olur.
+✅ Java’da nesneye ait değişkenlere doğrudan erişmek yerine, metotlar aracılığıyla işlem yapmak daha doğru bir yaklaşımdır (encapsulation/kapsülleme ilkesine uygun).
+✅ Metotlar seni tekrar eden kodlardan kurtarır.
+
+🪄 Bonus: İçinde değişken ismi w, h, d geçince karışıklık olmasın diye this kullanabiliriz:
+void setDim(double width, double height, double depth) {
+    this.width = width;
+    this.height = height;
+    this.depth = depth;
+}
+this.width → sınıfın içindeki değişken
+width → metot parametresi

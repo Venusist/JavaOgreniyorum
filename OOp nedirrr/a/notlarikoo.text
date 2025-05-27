@@ -1,0 +1,16 @@
+this Anahtar Kelimesi Nedir?
+Java'da this anahtar kelimesi, mevcut nesneye (yani o an üzerinde işlem yapılan nesneye) 
+referans veren bir işarettir. Bu, bir metodun ya da yapıcının (constructor) hangi nesne üzerinde çalıştığını 
+belirtmek için kullanılır.
+ this anahtar kelimesi genellikle instance (örnek) değişkenleri ile yerel 
+ değişkenler arasında isim çakışmalarını çözmek için kullanılır.
+
+
+Çöp Toplama (Garbage Collection)
+Java, çöp toplama (garbage collection) özelliğine sahip bir dil olduğu için, nesnelerin bellekten silinmesi işlemini otomatik olarak yapar. Yani, bir nesneye artık başka bir referans kalmadığında, Java bu nesnenin belleğini serbest bırakır.
+
+C++ gibi dillerde, nesneleri manüel olarak delete komutuyla silmeniz gerekir. Ancak Java'da böyle bir şey yapmanıza gerek yoktur.
+
+Çöp toplama Java'nın çalıştırma zamanında arka planda gerçekleşir ve nesneler kullanılmaz hale geldiğinde, bellekteki yer serbest bırakılır.
+
+Çöp toplama hakkında fazla endişelenmenize gerek yoktur, çünkü Java bunun otomatik olarak yönetilmesini sağlar.
