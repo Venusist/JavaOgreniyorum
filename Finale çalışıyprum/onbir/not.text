@@ -1,0 +1,31 @@
+🔍 static Nedir?
+static demek, sınıfa ait demektir, nesneye ait değil.
+
+📌 1. Statik Değişkenler (Static Variables)
+class MyClass {
+    static int count = 0; // static değişken
+
+    MyClass() {
+        count++; // Her nesne oluştuğunda count artar
+    }
+}
+count değişkeni tüm nesneler arasında ortaktır.
+MyClass.count ile doğrudan sınıf üzerinden erişilebilir.
+static olmasaydı her MyClass nesnesinin kendi countu olurdu
+
+📌 2. Statik Metotlar (Static Methods)
+class Utility {
+    static void sayHello() {
+        System.out.println("Hello!");
+    }
+}
+Utility.sayHello(); şeklinde doğrudan çağırılır.
+static metotlar, nesne oluşturmadan çağrılabilir.
+Static metotlar içinde yalnızca static değişkenlere ve metotlara erişilebilir.
+
+| Özellik                             | Static               | Non-static (Instance)       |
+| ----------------------------------- | -------------------- | --------------------------- |
+| Nesne olmadan çağrılır mı?          | ✅ Evet               | ❌ Hayır                     |
+| Her nesne kendi kopyasına sahip mi? | ❌ Hayır (ortak)      | ✅ Evet                      |
+| Bellekte nasıl tutulur?             | Sınıf başına 1 kopya | Her nesne başına ayrı kopya |
+

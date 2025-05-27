@@ -1,0 +1,23 @@
+🔄 Stack Nedir?
+Stack, yani yığın, verilerin son giren ilk çıkar (LIFO – Last In First Out) prensibiyle işlendiği bir veri yapısıdır.
+Yani: En son eklediğin eleman, ilk çıkar.
+
+
+📦 Stack’in Temel Özellikleri
+Sabit kapasiteye sahiptir (örneğin 10, 20, 100).
+Bir dizi (array) ile temsil edilir.
+Bir değişken olan tos (top of stack) en üstteki öğenin indeksini tutar.
+Başlangıçta tos = -1 olur → bu, yığının boş olduğunu gösterir.
+
+
+⚙️ Stack’te Yapılan İşlemler
+Push (ekle):
+Yeni bir eleman yığına eklenir.
+tos bir artırılır, eleman oraya yazılır.
+Ama önce tos kapasite sınırını aşıyor mu diye kontrol edilir.
+
+Pop (çıkar):
+tos’un işaret ettiği eleman çıkarılır.
+tos bir azaltılır.
+Ama önce yığın boş mu (tos == -1) diye kontrol edilir.
+

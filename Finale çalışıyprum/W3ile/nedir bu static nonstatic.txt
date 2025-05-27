@@ -1,0 +1,39 @@
+🔹 static Nedir?
+static, Java'da "bu şey nesneye değil sınıfa aittir" demektir.
+
+🔸 non-static Nedir?
+non-static ise "bu şey her nesneye özeldir" demektir.
+
+🍎 Elmalı Örnek
+Diyelim ki bir "Elma" sınıfın (class) var:
+
+public class Elma {
+    int agirlik = 150; // non-static
+    static String renk = "kırmızı"; // static
+}
+
+Bu sınıftan iki elma oluşturalım:
+
+public class Main {
+    public static void main(String[] args) {
+        Elma e1 = new Elma();
+        Elma e2 = new Elma();
+
+        e1.agirlik = 160;
+        e2.agirlik = 140;
+
+        System.out.println(e1.agirlik); // 160
+        System.out.println(e2.agirlik); // 140
+
+        System.out.println(Elma.renk); // kırmızı
+    }
+}
+Açıklama:
+agirlik non-static → Her elmanın kendi ağırlığı var.
+renk static → Tüm elmalar için geçerli bir tek renk bilgisi var. Sınıfa ait. Herkese aynı.
+
+Eğer bir değişken herkes için ortaksa, onu static yap.
+
+Eğer her nesneye özelse, yani herkesin farklı bir değeri olacaksa non-static kalsın.
+
+main metodu static olduğu için, içinden non-static şeylere direkt erişemezsin → önce nesne (new) oluşturman gerekir.

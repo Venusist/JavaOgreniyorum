@@ -1,0 +1,13 @@
+Any concept you wish to implement in a Java program must be encapsulated within a class.
+A class is a user-defined data type.
+A class describes how we will combine data and code together.
+A class declaration only creates a template; it does not create an actual object.
+
+Create object of a class:
+Declare object
+Allocate memory
+
+Box myBox;        // 1. Nesne tanımı (referans) — henüz nesne yok
+myBox = new Box(); // 2. new ile nesne oluşturuluyor (bellekte fiziksel olarak)
+
+Box myBox = new Box(); // Hem tanım hem nesne oluşturma

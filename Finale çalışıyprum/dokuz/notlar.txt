@@ -1,0 +1,37 @@
+Access Control (Erişim Kontrolü) nedir?
+Encapsulation (kapsülleme), yani verileri ve metotları bir sınıf içinde birleştirme, sadece bir programlama tekniği değil; aynı zamanda erişim kontrolü yapmamıza da olanak sağlar.
+Erişim kontrolü sayesinde;
+Sınıf üyelerinin (değişkenler, metotlar) hangi kısımlardan erişilebileceğini belirleyebiliriz.
+Bu sayede, sınıf üyelerine doğrudan yanlış veya istenmeyen erişimleri engelleriz.
+Programda yanlış kullanım ve hataların önüne geçeriz.
+
+Access Control: Access Modifiers
+Java’s access modifiers are public, private, and protected.
+protected applies only when inheritance is involved.
+When a member of a class is specified as public, then that member can be accessed by any other code.
+When a member of a class is specified as private, then that member can only be accessed by other members of its class. 
+When no access modifier is used, then by default the member of a class is public within its own package
+
+
+
+1. public
+public olarak tanımlanan sınıf üyesi her yerden erişilebilir.
+Yani başka bir paketten (package) veya sınıftan da rahatlıkla ulaşılır.
+Örnek: public int number;
+
+2. private
+private olarak tanımlanan sınıf üyesi sadece aynı sınıf içerisinden erişilebilir.
+Başka sınıflar ya da paketler bu üyeye doğrudan erişemez.
+Bu, veriyi dışarıdan gizlemek ve kontrollü erişim sağlamak için kullanılır.
+Örnek: private String password;
+
+3. protected
+protected sadece inheritance (kalıtım) durumunda geçerlidir.
+Eğer bir sınıf başka bir sınıfı extends (miras) alıyorsa, protected üyeler o alt sınıf tarafından erişilebilir olur.
+Aynı zamanda aynı paket içerisindeki diğer sınıflar da erişebilir.
+Özetle, protected erişim hem paket içi hem de alt sınıflar için açılır.
+
+4. Default (Paket Erişimi)
+Eğer hiçbir erişim belirleyici yazılmazsa, bu üyeler default (paket-private) olarak kabul edilir.
+Bu durumda, sınıf üyesine sadece aynı paket içinden erişilebilir, dış paketlerden erişim olmaz.
+
